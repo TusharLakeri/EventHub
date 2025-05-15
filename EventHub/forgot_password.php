@@ -4,22 +4,13 @@
 // Include your database connection file
 include "database.php"; // This file should create $conn
 
-// --- Email Configuration ---
-// !!! IMPORTANT: Replace with your actual email sending logic.
-// Using PHPMailer or a similar library is highly recommended for production.
-// This uses the basic mail() function which may not be reliable.
+
 $from_email = "eventhub2k25@gmail.com"; // Your sending email address
 $subject = "Password Reset OTP for EventHub";
 
 // --- OTP Configuration ---
 $otp_expiry_minutes = 10; // OTP is valid for 10 minutes
 $otp_length = 6; // Length of the OTP
-
-// --- Security Note: Hashing Passwords ---
-// As mentioned before, the provided usertable schema stores passwords in plain text.
-// THIS IS EXTREMELY INSECURE. You MUST use password hashing.
-// Ensure your 'pass' column in usertable is VARCHAR(255) or similar to store hashes.
-// Use password_hash() when creating/updating passwords and password_verify() for login.
 
 // --- Function to generate a numeric OTP ---
 function generate_otp($length = 6) {
@@ -161,11 +152,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reset_password'])) {
                 // OTP is valid and not expired
 
                 // Hash the new password (REQUIRED!)
+                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
                
                 // Update the password in the usertable
                 $update_stmt = $conn->prepare("UPDATE usertable SET pass = ? WHERE email = ?");
                  // Make sure 'pass' is the correct column name in your usertable for the HASHED password
-                $update_stmt->bind_param("ss",  $new_password, $email);
+                $update_stmt->bind_param("ss",  $hashed_password, $email);
 
                 if ($update_stmt->execute()) {
                     // Password updated successfully, delete the OTP
