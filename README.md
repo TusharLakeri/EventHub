@@ -1,22 +1,22 @@
 
-# 🚀 EventHub: College Events Platform
+# EventHub: College Events Platform
 
 EventHub is a dynamic platform built to centralize and streamline all college-level event management and participation. Whether you're a student exploring academic opportunities or an admin organizing seminars and workshops, EventHub brings everything under one intuitive roof.
 
 ---
 
-## 🎯 Key Highlights
+##  Key Highlights
 
-- 🔐 **Secure Authentication**: Login, register, and recover accounts with ease.
-- 🛠️ **Admin Dashboard**: Create, manage, and delete events effortlessly.
-- 🧑‍🎓 **Student Profiles**: View and register for events.
-- 🗂️ **Event Filtering**: Instantly sort events by type, department, or college.
-- 🎨 **Custom Styling**: Polished UI with dedicated CSS for every page.
-- 💾 **MySQL Powered**: Fast and reliable database interaction using PHP.
+- **Secure Authentication**: Login, register, and recover accounts with ease.
+- **Admin Dashboard**: Create, manage, and delete events effortlessly.
+- **Student Profiles**: View and register for events.
+- **Event Filtering**: Instantly sort events by type, department, or college.
+- **Custom Styling**: Polished UI with dedicated CSS for every page.
+- **MySQL Powered**: Fast and reliable database interaction using PHP.
 
 ---
 
-## 🧱 Built With
+## Built With
 
 - `PHP` – Backend logic & server-side scripting
 - `MySQL` – Database management
@@ -25,11 +25,11 @@ EventHub is a dynamic platform built to centralize and streamline all college-le
 
 ---
 
-## 🧰 Installation Guide
+##  Installation Guide
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/EventHub.git
+   git clone https://github.com/tusharlakeri/EventHub.git
    cd EventHub/EventHub
    ```
 
